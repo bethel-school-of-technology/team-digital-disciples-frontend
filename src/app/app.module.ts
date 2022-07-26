@@ -9,10 +9,11 @@ import { RegistrationComponent } from './registration/registration.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { InboxComponent } from './inbox/inbox.component';
 import { PrayerRequestsComponent } from './prayer-requests/prayer-requests.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
-    AppComponent, GetRequestComponent, LoginComponent, RegistrationComponent, DashboardComponent, InboxComponent, PrayerRequestsComponent
+    AppComponent, GetRequestComponent, LoginComponent, RegistrationComponent, DashboardComponent, InboxComponent, PrayerRequestsComponent, NavbarComponent
   ],
   imports: [
     BrowserModule,
