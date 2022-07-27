@@ -7,10 +7,15 @@ import { PrayerRequestsComponent } from './prayer-requests/prayer-requests.compo
 import { LoginComponent } from './login/login.component';
 import { InboxComponent } from './inbox/inbox.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { AppComponent } from './app.component';
 
 
 const routes: Routes = [
 
+  {
+    path: "",
+    component: LoginComponent
+  },
   {
     path: 'registration',
     component: RegistrationComponent
