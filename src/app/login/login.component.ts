@@ -24,12 +24,7 @@ export class LoginComponent implements OnInit {
     if (this.formGroup.valid){
       console.log(this.formGroup.value);
       this.login.login(this.formGroup.value).subscribe(result => {
-        if (!result == null){  
           console.log(result);
-          alert("Success");
-        }else {
-          alert("Invalid Attempt");
-        }
       })
     }
   }
