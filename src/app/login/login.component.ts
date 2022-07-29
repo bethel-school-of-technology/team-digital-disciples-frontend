@@ -1,6 +1,6 @@
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-import { LoginService } from '../services/login.service';
+import { LoginService } from '../services/login-service.service';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +9,7 @@ import { LoginService } from '../services/login.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private login: LoginService) { }
+  constructor(private loginInfo: LoginService) { }
   formGroup: FormGroup;
   ngOnInit() {
     this.initForm();
@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
   loginProcess(){
     if (this.formGroup.valid){
       console.log(this.formGroup.value);
-      this.login.login(this.formGroup.value).subscribe(result => {
+      this.loginInfo.login(this.formGroup.value).subscribe(result => {
           console.log(result);
       })
     }
