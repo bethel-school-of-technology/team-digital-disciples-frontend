@@ -9,14 +9,16 @@ import { PrayerRequestService } from '../services/prayer-request.service';
 })
 export class PrayerRequestsComponent implements OnInit {
   
-  requests: PrayerRequest[];
+  listOfRequests: PrayerRequest[];
 
   constructor(private prayerService: PrayerRequestService) { }
 
   ngOnInit(): void {
     this.prayerService.getPrayerRequests().subscribe(result =>{
-      this.requests = result;
+      this.listOfRequests = result;
     });
+
+    //this.prayerService.deletePrayerRequest(requestId).subscribe();
   }
 
 }

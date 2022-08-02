@@ -12,7 +12,29 @@ export class PrayerRequestService {
 
   constructor(private http: HttpClient) { }
 
+  
   getPrayerRequests(): Observable<PrayerRequest[]> {
     return this.http.get<PrayerRequest[]>(this.baseUrl + "PrayerRequests/unresponded/");
   }
-}
+
+  // component needs to send and Id for the request
+  getOneRequest(requestId: number): Observable<PrayerRequest>{
+    return this.http.get<PrayerRequest>(this.baseUrl + "PrayerRequests/getone/{requestId}"); //does this need to be lower case requestId? Yes to match the variable in the paraameter
+  }
+
+
+    //component needs to provide the Id as well as the updated request info
+    //editId:number, edittedInfo:PrayerRequest
+  updateRequest(editId: number, edittedInfo: PrayerRequest): Observable<PrayerRequest>{
+    return this.http.put<PrayerRequest>(this.baseUrl + "PrayerRequests/updateOne/" , edittedInfo);
+  }
+
+
+  deletePrayerRequest(requestId: number): Observable<any>{
+    return this.http.delete<any>(this.baseUrl + "PrayerRequests/deleteOne/{requestId}");
+  }
+
+  // markAsAnswered(condition: boolean): Observable<PrayerRequest> {
+  //   return this.http.put
+  // }
+ }
