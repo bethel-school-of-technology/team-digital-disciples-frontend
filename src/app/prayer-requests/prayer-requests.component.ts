@@ -17,8 +17,12 @@ export class PrayerRequestsComponent implements OnInit {
     this.prayerService.getPrayerRequests().subscribe(result =>{
       this.listOfRequests = result;
     });
-
     //this.prayerService.deletePrayerRequest(requestId).subscribe();
   }
 
+
+  deletePrayerRequest(requestId: number){
+    console.log("Testing" + requestId);
+
+  }
 }
