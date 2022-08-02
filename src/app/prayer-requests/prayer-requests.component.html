@@ -1,1 +1,8 @@
-<p>prayer-requests works!</p>
+<div class="container">
+    <h1>Unanswered Prayer Requests</h1>
+    <div class="prayer-requests" *ngIf="requests && requests.length > 0"></div>
+        <div class="request-wrapper" *ngFor="let request of requests">
+            <div>{{request.prayerAsk}}</div>
+            <div>{{request.isAnswered}}</div>
+        </div>
+</div>
