@@ -1,7 +1,7 @@
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../services/login-service.service';
-
+import { Router } from "@angular/router";
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -9,7 +9,7 @@ import { LoginService } from '../services/login-service.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private loginInfo: LoginService) { }
+  constructor(private loginInfo: LoginService, private router: Router) { }
   formGroup: FormGroup;
   ngOnInit() {
     this.initForm();
@@ -25,7 +25,11 @@ export class LoginComponent implements OnInit {
       console.log(this.formGroup.value);
       this.loginInfo.login(this.formGroup.value).subscribe(result => {
           console.log(result);
-      })
+          //store user credentials in local variable To BE Completed
+          this.router.navigate(['/dashboard']);
+        })
+        
+ 
     }
   }
 }
