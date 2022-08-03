@@ -6,7 +6,7 @@
         
             <div>{{request.prayerAsk}}</div>
             <div>{{request.isAnswered}}</div>
-            <button type="button" class="btn btn-info" (click) ="onClickGetOne(this.request.requestId)">Edit</button>
+            <a [routerLink]="['/edit',this.request.requestId]"><button type="button" class="btn btn-info" (click) ="onClickGetOne(this.request.requestId)">Edit</button></a>
             <!-- edit icon <i style="font-size:24px" class="fa">&#xf044;</i>  edit icon-->
             <button type="button" class="btn btn-danger" (click)="onClickDelete(this.request.requestId)">Delete</button>
 

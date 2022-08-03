@@ -1,1 +1,12 @@
-<p>edit-request works!</p>
+<h3>Update or Change your Prayer Request </h3>
+<div>
+    <p>
+        {{currentRequest.prayerAsk}}
+    </p>
+</div>
+<form (ngSubmit)="editRequest()">
+    <label>Prayer Request</label>
+    <input type ="text" name="prayerAsk" [(ngModel)] = "currentRequest.prayerAsk">
+    <br>
+    <button type="submit">Update</button>
+</form>
