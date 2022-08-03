@@ -4,6 +4,7 @@ import { PrayerRequest } from '../models/prayerRequest';
 import { baseUrl } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -11,22 +12,22 @@ export class PrayerRequestService {
    
 
   constructor(private http: HttpClient) { }
-
+//these send to the back-end
   
   getPrayerRequests(): Observable<PrayerRequest[]> {
     return this.http.get<PrayerRequest[]>(baseUrl + "PrayerRequests/unresponded/");
   }
 
-  // component needs to send and Id for the request
+  // component needs to send an Id for the request
   getOneRequest(requestId: number): Observable<PrayerRequest>{
-    return this.http.get<PrayerRequest>(baseUrl + "PrayerRequests/getone/{requestId}"); //does this need to be lower case requestId? Yes to match the variable in the paraameter
+    return this.http.get<PrayerRequest>(baseUrl + "PrayerRequests/getone/" + requestId); //does this need to be lower case requestId? Yes to match the variable in the paraameter
   }
 
 
     //component needs to provide the Id as well as the updated request info
     //editId:number, edittedInfo:PrayerRequest
   updateRequest(requestId: number, edittedInfo: PrayerRequest): Observable<PrayerRequest>{
-    return this.http.put<PrayerRequest>(baseUrl + "PrayerRequests/updateOne/" ,edittedInfo);
+    return this.http.put<PrayerRequest>(baseUrl + "PrayerRequests/updateOne/" + edittedInfo, PrayerRequest);
   }
 
 
