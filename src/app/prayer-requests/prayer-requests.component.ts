@@ -7,6 +7,7 @@ import { PrayerRequestService } from '../services/prayer-request.service';
   templateUrl: './prayer-requests.component.html',
   styleUrls: ['./prayer-requests.component.css']
 })
+
 export class PrayerRequestsComponent implements OnInit {
   
   listOfRequests: PrayerRequest[];
@@ -17,8 +18,21 @@ export class PrayerRequestsComponent implements OnInit {
     this.prayerService.getPrayerRequests().subscribe(result =>{
       this.listOfRequests = result;
     });
-
-    //this.prayerService.deletePrayerRequest(requestId).subscribe();
   }
 
+  onClickDelete(requestId: number){
+    console.log("Testing" + requestId);
+    this.prayerService.deletePrayerRequest(requestId).subscribe(result =>{
+      console.log(result);
+      location.reload();
+    })
+  }
+
+  onClickGetOne(requestId: number){
+    this.prayerService.getOneRequest(requestId).subscribe(result =>{
+      console.log(result);
+      //redirect to edit component page
+
+    })
+  }
 }
