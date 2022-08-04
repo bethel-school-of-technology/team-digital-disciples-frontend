@@ -26,9 +26,11 @@ export class PrayerRequestService {
 
     //component needs to provide the Id as well as the updated request info
     //editId:number, edittedInfo:PrayerRequest
-  updateRequest(requestId: number, edittedInfo: PrayerRequest): Observable<PrayerRequest>{
-    return this.http.put<PrayerRequest>(baseUrl + "PrayerRequests/updateOne/" + edittedInfo, PrayerRequest);
-  }
+  /* updateRequest(requestId: number): Observable<PrayerRequest>{
+    return this.http.post<PrayerRequest>(baseUrl + "PrayerRequests/updateOne/", PrayerRequest);
+  } */
+  updateRequest(prequest: PrayerRequest): Observable<PrayerRequest>{
+    return this.http.post<PrayerRequest>(baseUrl + "PrayerRequests/updateOne/", prequest);}
 
 
   deletePrayerRequest(requestId: number): Observable<any>{
