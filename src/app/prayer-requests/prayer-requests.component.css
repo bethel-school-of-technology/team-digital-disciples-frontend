@@ -1,15 +1,6 @@
 .container {
-    max-width: 700px;
+    max-width: 900px;
     margin: auto;
     margin-top: 4rem;
 }
 
-.request-wrapper {
-    padding: 10px;
-    font-size: 1rem;
-    border: 1px solid gray;
-    border-radius: 5ps;
-    margin: 10px 0;
-    display: flex;
-    justify-content: space-between;
-}

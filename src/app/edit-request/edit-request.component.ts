@@ -31,7 +31,7 @@ prayerId: number;
   }
 
   editRequest(){
-    this.myPrayerService.updateRequest(this.prayerId, this.currentRequest).subscribe(response =>{
+    this.myPrayerService.updateRequest(this.currentRequest).subscribe(response =>{
       console.log(response);
       this.router.navigate(["prayerrequests"]);
     })
