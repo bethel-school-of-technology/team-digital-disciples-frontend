@@ -25,6 +25,9 @@ export class LoginComponent implements OnInit {
       console.log(this.formGroup.value);
       this.loginInfo.login(this.formGroup.value).subscribe(result => {
           console.log(result);
+          localStorage.setItem('currentUser', JSON.stringify(result));
+          //get out of storage   
+          console.log(JSON.parse(localStorage.getItem("currentUser")))
           //store user credentials in local variable To BE Completed
           this.router.navigate(['/dashboard']);
         })
