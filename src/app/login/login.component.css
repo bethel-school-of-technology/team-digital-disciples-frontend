@@ -40,12 +40,22 @@
 .form {
     text-align: center;
     color:#ffffff;
+    margin-bottom: 20px;
 }
 
 .btn {
-    width: 200px;
-    margin-top: 5px;
+    width: 250px;
+    margin-top: 10px;
     border-style: solid;
-    border-color: black;
     color: #ffffff
+}
+.signin-btn {
+    background-color: #65c907;
+    color: white;
+    margin-top: 30px;
+}
+
+.register-btn {
+    background-color: #001aff;
+    
 }
