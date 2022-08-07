@@ -42,20 +42,6 @@
     color:#ffffff;
     margin-bottom: 20px;
 }
-
-.btn {
-    width: 250px;
-    margin-top: 10px;
-    border-style: solid;
-    color: #ffffff
-}
-.signin-btn {
-    background-color: #65c907;
-    color: white;
-    margin-top: 30px;
-}
-
-.register-btn {
-    background-color: #001aff;
-    
+.password {
+    margin-bottom: 20px;
 }

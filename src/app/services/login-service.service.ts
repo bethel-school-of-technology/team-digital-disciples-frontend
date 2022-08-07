@@ -2,6 +2,7 @@ import { baseUrl } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { User } from 'src/app/models/User'
 
 @Injectable({
   providedIn: 'root'
@@ -14,5 +15,10 @@ export class LoginService {
   }
   register(data):Observable<any>{
     return this.http.post(`${baseUrl}users/register`, data);
+  }
+
+  getCurrentUser():Observable<any>{
+
+    return JSON.parse(localStorage.getItem('currentUser'));
   }
 }

@@ -15,8 +15,11 @@
     <label for="exampleInputPassword1" class="form-label mt-4">Password</label>
     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" formControlName="password">
   </div>
-<button type="submit" class="btn btn-lg btn-outline-success signin-btn">Login</button>
-<div><a routerLink="/registration"><button type="button" class="btn btn-lg btn-primary register-btn">Register</button></a></div>
+  <div class="d-grid gap-2">
+    <button class="btn btn-lg btn-success" type="submit">Login</button>
+    <button class="btn btn-lg btn-primary" type="button" [routerLink]="'/registration'">Register</button>
+  </div>
+
 </form>
 </div>
 </div>
