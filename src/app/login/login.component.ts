@@ -14,6 +14,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     this.initForm();
   }
+ 
   initForm(){
     this.formGroup = new FormGroup({
       username: new FormControl('', Validators.required),
@@ -22,13 +23,12 @@ export class LoginComponent implements OnInit {
   }
   loginProcess(){
     if (this.formGroup.valid){
-      console.log(this.formGroup.value);
       this.loginInfo.login(this.formGroup.value).subscribe(result => {
           localStorage.setItem('currentUser', JSON.stringify(result)); 
           this.router.navigate(['/dashboard']);
         })
         
- 
+  
     }
   }
 }

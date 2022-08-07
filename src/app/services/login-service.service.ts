@@ -17,8 +17,4 @@ export class LoginService {
     return this.http.post(`${baseUrl}users/register`, data);
   }
 
-  getCurrentUser():Observable<any>{
-
-    return JSON.parse(localStorage.getItem('currentUser'));
-  }
 }

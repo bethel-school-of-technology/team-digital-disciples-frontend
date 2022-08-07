@@ -8,14 +8,7 @@ import { User } from '../models/User';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  currentUser : User = new User();
-  constructor(private userInfo: LoginService, private router: Router) { }
-
-  ngOnInit(): void {
-    this.userInfo.getCurrentUser().subscribe(result => {
-      this.currentUser = result;
-      console.log("Current User is: " + this.currentUser);
-    })
+  constructor() { }
+  ngOnInit(): void {}
   }
 
-}
