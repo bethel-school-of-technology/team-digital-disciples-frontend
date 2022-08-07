@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { InboxComponent } from './inbox/inbox.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AppComponent } from './app.component';
+import { EditRequestComponent } from './edit-request/edit-request.component';
 
 
 const routes: Routes = [
@@ -35,6 +36,10 @@ const routes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent
+  },
+  {
+    path: 'edit/:requestId',
+    component: EditRequestComponent
   }
 ];
 

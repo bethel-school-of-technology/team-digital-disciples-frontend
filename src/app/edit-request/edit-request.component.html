@@ -1,0 +1,12 @@
+<div class="container">
+<h3>Update your Prayer Request </h3>
+
+<form (ngSubmit)="editRequest()">
+    <label>Type your changes then click 'Update"</label>
+    <br>
+    <button type="submit">Update</button>
+</form>
+<br>
+<textarea rows="6" cols="100" name="prayerAsk" [(ngModel)] = "currentRequest.prayerAsk"></textarea>
+
+</div>
