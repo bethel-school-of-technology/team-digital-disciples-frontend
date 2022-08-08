@@ -25,7 +25,6 @@ export class RegistrationComponent implements OnInit {
   }
   registerProcess(){
     if (this.formGroup.valid){
-      console.log(this.formGroup.value);
       this.loginInfo.register(this.formGroup.value).subscribe(result => {
           console.log(result);
           this.router.navigate(['/login']);
