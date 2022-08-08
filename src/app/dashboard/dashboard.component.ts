@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { DashboardService } from '../services/dashboard.service';
 
 @Component({
@@ -7,21 +9,31 @@ import { DashboardService } from '../services/dashboard.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  title= 'post API calls in Angular';
+  formGroup:FormGroup
   prayerRequests: any;
-  constructor(private prayerRequestData: DashboardService) { 
+  constructor(private prayerRequestData: DashboardService, private router: Router) { 
     this.prayerRequestData.dashboard().subscribe((data) => {
       this.prayerRequests=data;
     });
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.initForm();
   }
 
-  postPrayerRequest(data : any) {
-    console.warn(data)
-    this.prayerRequestData.savePrayerRequest(data).subscribe((result) => {
-      console.warn(result)
+  initForm(){
+    this.formGroup= new FormGroup({
+      prayerAsk: new FormControl('', Validators.required)
     })
+  }
+
+  postPrayerRequest() {
+    if (this.formGroup.valid){
+      console.log(this.formGroup.value);
+      this.prayerRequestData.savePrayerRequest(this.formGroup.value).subscribe((result) => {
+        console.log(result);
+        this.router.navigate(['/prayer-requests']);
+      })
+    }
   }
 }

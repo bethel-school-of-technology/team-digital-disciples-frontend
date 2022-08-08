@@ -43,12 +43,13 @@
         const verseID = VERSES[verseIndex];
       </script>
 <div class="container">
-    <form #prayerRequestForm="ngForm" ngSubmit="postPrayerRequest(prayerRequestForm.value)">
+    <form #prayerRequestForm="ngForm" (ngSubmit)="postPrayerRequest()">
         <h2>Post Prayer Request:</h2>
         <br>
         <textarea ngModel rows = "5" cols = "60" name = "description">
         New Prayer Request
-        </textarea><br>
+        </textarea>
+        <br>
         <button type="submit" class="btn btn-success">Submit</button>
     </form>
 </div>
