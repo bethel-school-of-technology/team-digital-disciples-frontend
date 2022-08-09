@@ -9,19 +9,25 @@
     <div class="collapse navbar-collapse" id="navbarColor01">
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
-          <a class="nav-link active" href="#">Home
+          <a class="nav-link active" href="/dashboard">Home
             <span class="visually-hidden">(current)</span>
           </a>
         </li>
-        <li class="nav-item">
+        <li *ngIf="this.currentUser != null" class="nav-item">
           <a class="nav-link" href="prayerrequests">View Prayer Requests</a>
+        </li>
+        <li *ngIf="this.currentUser != null" class="nav-item">
+          <a class="nav-link" href="submittedrequests">My Submited Requests</a>
+        </li>
+        <li *ngIf="this.currentUser != null" class="nav-item">
+          <a class="nav-link" href="inbox">Inbox</a>
         </li>
       </ul>
       <form class="d-flex">
-        <button class="btn btn-secondary my-2 my-sm-0 nav-btn" type="submit">Submitted Requests</button>
-        <button class="btn btn-secondary my-2 my-sm-0 nav-btn" type="submit">Inbox</button>
-        
-        
+        <div *ngIf="this.currentUser != null" class="user-container">
+          <div>Logged in as: {{this.currentUser.username}}</div>
+        <a class="logout-link" role="button" (click)="logout()">Logout</a>
+        </div>
       </form>
     </div>
   </div>

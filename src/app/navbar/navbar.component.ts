@@ -8,7 +8,17 @@ import { User } from '../models/User';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  constructor() { }
-  ngOnInit(): void {}
+  constructor(private router: Router) { 
+  }
+  public currentUser: User;
+  public isLoggedin: boolean;
+  logout(){
+    localStorage.removeItem('currentUser');
+    this.router.navigate(['/login']); 
+    location.reload();
+  }
+  ngOnInit() {
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
   }
 
+}
