@@ -1,3 +1,25 @@
 .nav-btn {
     margin-left : 10px;
 }
+.logo {
+    width: 150px;
+}
+
+.logo img{
+    width: 100%;
+}
+
+.nav-item {
+    margin-left: 25px;
+    font-size: 22px;
+}
+
+.user-container {
+    align-items: baseline;
+    justify-content: center;
+    text-align: center;
+}
+.logout-link {
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+}

@@ -1,0 +1,10 @@
+.container {
+    max-width: 700px;
+    margin: auto;
+    margin-top: 4rem;
+}
+
+form {
+    height: 200 px;
+    width: 600px;
+}

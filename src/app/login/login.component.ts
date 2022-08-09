@@ -2,6 +2,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../services/login-service.service';
 import { Router } from "@angular/router";
+import { NavbarComponent } from '../navbar/navbar.component';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -14,22 +15,20 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     this.initForm();
   }
+ 
   initForm(){
     this.formGroup = new FormGroup({
       username: new FormControl('', Validators.required),
       password: new FormControl('', Validators.required)
     })
   }
-  loginProcess(){
+  onClickLogin(){
     if (this.formGroup.valid){
-      console.log(this.formGroup.value);
-      this.loginInfo.login(this.formGroup.value).subscribe(result => {
-          console.log(result);
-          //store user credentials in local variable To BE Completed
-          this.router.navigate(['/dashboard']);
+    this.loginInfo.login(this.formGroup.value).subscribe(result => {
+        localStorage.setItem('currentUser', JSON.stringify(result));
         })
-        
- 
-    }
+        location.reload;
+        this.router.navigate(["/dashboard"])
   }
+}
 }

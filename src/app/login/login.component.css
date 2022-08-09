@@ -1,7 +1,47 @@
-.body-div {
-    text-align: center;
+* {
+    font-family: 'Lato', sans-serif;
 }
-form {
-    display: inline-block;
-    max-width: 50%;
+
+
+
+.login-div {
+    margin: 100px auto;
+    width: 400px;
+    background-color: rgb(1, 118, 252);
+    padding: 60px;
+    border-radius: 35px;
+}
+
+.logo {
+    background-color: white;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+.logo img {
+    width: 100%;
+}
+
+.title, .subtitle {
+    text-align: center;
+    color: #ffffff;
+}
+
+.title {
+    font-weight: bolder;
+    font-size: 35px;
+}
+.subtitle {
+    font-size: 18px;
+}
+.form {
+    text-align: center;
+    color:#ffffff;
+    margin-bottom: 20px;
+}
+.password {
+    margin-bottom: 20px;
 }
