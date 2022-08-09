@@ -9,13 +9,15 @@ import { InboxComponent } from './inbox/inbox.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AppComponent } from './app.component';
 import { EditRequestComponent } from './edit-request/edit-request.component';
+import { AuthUserGuardGuard } from './auth-user-guard.guard';
 
 
 const routes: Routes = [
 
   {
     path: "",
-    component: LoginComponent
+    component: DashboardComponent,
+    canActivate: [AuthUserGuardGuard]
   },
   {
     path: 'registration',
@@ -23,7 +25,8 @@ const routes: Routes = [
   },
   {
     path:'prayerrequests',
-    component: PrayerRequestsComponent
+    component: PrayerRequestsComponent,
+    canActivate: [AuthUserGuardGuard]
   },
   {
     path: 'login',
@@ -31,20 +34,23 @@ const routes: Routes = [
   },
   {
     path:'inbox',
-    component:InboxComponent
+    component:InboxComponent,
+    canActivate: [AuthUserGuardGuard]
   }, 
   {
     path: 'dashboard',
-    component: DashboardComponent
+    component: DashboardComponent,
+    canActivate: [AuthUserGuardGuard]
   },
   {
     path: 'edit/:requestId',
-    component: EditRequestComponent
+    component: EditRequestComponent,
+    canActivate: [AuthUserGuardGuard]
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes), CommonModule],
+  imports: [RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'}), CommonModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

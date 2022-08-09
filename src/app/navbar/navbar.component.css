@@ -13,3 +13,13 @@
     margin-left: 25px;
     font-size: 22px;
 }
+
+.user-container {
+    align-items: baseline;
+    justify-content: center;
+    text-align: center;
+}
+.logout-link {
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+}
