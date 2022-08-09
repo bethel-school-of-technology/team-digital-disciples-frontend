@@ -25,10 +25,12 @@ export class LoginComponent implements OnInit {
   onClickLogin(){
     if (this.formGroup.valid){
     this.loginInfo.login(this.formGroup.value).subscribe(result => {
-        localStorage.setItem('currentUser', JSON.stringify(result));
+    localStorage.setItem('currentUser', JSON.stringify(result));
+    this.loginInfo.currentUser$.next(result);
+    this.router.navigateByUrl("/dashboard"); 
         })
-        location.reload;
-        this.router.navigate(["/dashboard"])
+        
+            
   }
 }
 }
