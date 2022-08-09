@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <div class="container">
-    <h1>Unanswered Prayer Requests</h1>
+    <h1>My Prayer Requests</h1>
     <div class="prayer-requests" ></div>
         <table class ="table table-bordered table-striped">
             <thead>
@@ -14,7 +14,7 @@
             <tbody  *ngIf="listOfRequests && listOfRequests.length > 0">
                 <tr *ngFor="let request of listOfRequests">
                     <td><span>{{request.prayerAsk}}</span></td>
-                    <td><span>  <input type="radio" name="answered" [(ngModel)]="request.isAnswered" [value]="false"> <!-- this needs a function to remove it from the list when checked-->
+                    <td><span>  <input type="button" name="answered" [(ngModel)]="request.isAnswered" [value]="false"> <!-- this needs a function to remove it from the list when checked-->
                     </span></td>
                     <td><span><a [routerLink]="['/edit',this.request.requestId]"><button type="button" class="btn btn-info" (click) ="onClickGetOne(this.request.requestId)">Edit</button></a></span></td>
                     <td><span> <button type="button" class="btn btn-danger" (click)="onClickDelete(this.request.requestId)">Delete</button></span></td>
