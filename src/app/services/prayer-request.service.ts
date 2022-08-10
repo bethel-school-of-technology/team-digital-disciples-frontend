@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { PrayerRequest } from '../models/prayerRequest';
 import { baseUrl } from 'src/environments/environment';
 import { Observable } from 'rxjs';
+import { PrayerResponse } from '../models/prayerResponse';
 
 
 @Injectable({
