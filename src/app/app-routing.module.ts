@@ -10,6 +10,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AppComponent } from './app.component';
 import { EditRequestComponent } from './edit-request/edit-request.component';
 import { AuthUserGuardGuard } from './auth-user-guard.guard';
+import { UnrespondedPrayerRequestsComponent } from './unresponded-prayer-requests/unresponded-prayer-requests.component';
+import { PrayerResponseComponent } from './prayer-response/prayer-response.component';
 
 
 const routes: Routes = [
@@ -29,6 +31,16 @@ const routes: Routes = [
     canActivate: [AuthUserGuardGuard]
   },
   {
+    path:'unrespondedprayerrequests',
+    component: UnrespondedPrayerRequestsComponent,
+    canActivate: [AuthUserGuardGuard]
+  },
+  {
+    path:'prayerresponse',
+    component: PrayerResponseComponent,
+    canActivate: [AuthUserGuardGuard]
+  },
+  {
     path: 'login',
     component: LoginComponent
   },
@@ -45,6 +57,11 @@ const routes: Routes = [
   {
     path: 'edit/:requestId',
     component: EditRequestComponent,
+    canActivate: [AuthUserGuardGuard]
+  },
+  {
+    path: 'prayerresponses/:requestId',
+    component: PrayerResponseComponent,
     canActivate: [AuthUserGuardGuard]
   }
 ];

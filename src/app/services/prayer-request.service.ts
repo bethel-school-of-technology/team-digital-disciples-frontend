@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { PrayerRequest } from '../models/prayerRequest';
 import { baseUrl } from 'src/environments/environment';
 import { Observable } from 'rxjs';
+import { PrayerResponse } from '../models/prayerResponse';
 
 
 @Injectable({
@@ -35,6 +36,11 @@ export class PrayerRequestService {
 
   deletePrayerRequest(requestId: number): Observable<any>{
     return this.http.delete<any>(baseUrl + "PrayerRequests/deleteOne/" + requestId);
+  }
+
+
+  postResponse(prayerResponse : PrayerResponse): Observable<any>{
+    return this.http.post<any>(baseUrl + "PrayerResponses/new/" , prayerResponse);
   }
 
   // markAsAnswered(condition: boolean): Observable<PrayerRequest> {

@@ -11,6 +11,7 @@ import { PrayerRequestService } from '../services/prayer-request.service';
 export class PrayerRequestsComponent implements OnInit {
   
   listOfRequests: PrayerRequest[];
+  
 
   constructor(private prayerService: PrayerRequestService) { }
 
