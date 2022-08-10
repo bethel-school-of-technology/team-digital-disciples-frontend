@@ -1,6 +1,6 @@
 <div class="container">
         <form (ngSubmit)="onClickReply()">
-          <h1>Responding to {{this.selectedRequest.prayerAsk}}</h1>
+          <h1>{{this.originalPoster.firstName}} {{this.originalPoster.lastName}} is asking for prayer for: {{this.selectedRequest.prayerAsk}}</h1>
           <h2>Respond to Prayer:</h2>
           <br>
           <textarea ngModel rows = "5" cols = "60" name = "description" [(ngModel)] = "prayerResponse.prayerTextResponse" >
