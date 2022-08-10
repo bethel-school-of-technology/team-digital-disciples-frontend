@@ -13,7 +13,13 @@ export class PrayerRequestService {
 
   constructor(private http: HttpClient) { }
 //these send to the back-end
-  
+
+  //get requests by user
+  getMyPR(userId: number): Observable<PrayerRequest[]>{
+    return this.http.get<PrayerRequest[]>(baseUrl + "PrayerRequests/getAll/" + userId);
+    }
+
+  //get all prayer requests
   getPrayerRequests(): Observable<PrayerRequest[]> {
     return this.http.get<PrayerRequest[]>(baseUrl + "PrayerRequests/unresponded/");
   }
