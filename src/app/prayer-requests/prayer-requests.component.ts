@@ -10,8 +10,9 @@ import { User } from '../models/User';
 })
 
 export class PrayerRequestsComponent implements OnInit {
-  
+  //stores user request with false
   listOfRequests: PrayerRequest[];
+currentRequest: PrayerRequest = new PrayerRequest();
 
   constructor(private prayerService: PrayerRequestService) { }
   public currentUser: User;
@@ -20,9 +21,18 @@ export class PrayerRequestsComponent implements OnInit {
     this.currentUser = JSON.parse(localStorage.getItem("currentUser"));
     this.prayerService.getMyPR(this.currentUser.id).subscribe(result =>{
      
-
       this.listOfRequests = result;
     });
+  }
+
+  onClickAnswered(prayerRequest: PrayerRequest) {
+    console.log(prayerRequest);
+    this.currentRequest = prayerRequest;
+    this.currentRequest.isAnswered = true;
+    this.prayerService.updateRequest(this.currentRequest).subscribe(result =>{
+      console.log(result);
+      
+    })
   }
 
   onClickDelete(requestId: number){

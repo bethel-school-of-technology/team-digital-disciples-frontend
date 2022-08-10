@@ -29,6 +29,10 @@ export class PrayerRequestService {
     return this.http.get<PrayerRequest>(baseUrl + "PrayerRequests/getone/" + requestId); //does this need to be lower case requestId? Yes to match the variable in the paraameter
   }
 
+  // getallAnswered(): Observable<PrayerRequest[]> {
+  //   return this.http.get<PrayerRequest>(baseUrl + "PrayerRequests/answered/");
+  // }
+
 
     //component needs to provide the Id as well as the updated request info
     //editId:number, edittedInfo:PrayerRequest
@@ -43,7 +47,5 @@ export class PrayerRequestService {
     return this.http.delete<any>(baseUrl + "PrayerRequests/deleteOne/" + requestId);
   }
 
-  // markAsAnswered(condition: boolean): Observable<PrayerRequest> {
-  //   return this.http.put
-  // }
+  
  }
