@@ -1,5 +1,5 @@
 <div class="container">
-    <h1>Unanswered Prayer Requests</h1>
+    <h1>Prayer Requests Awaiting Response</h1>
     <div class="prayer-requests" ></div>
         <table class ="table table-bordered table-striped">
             <thead>
@@ -11,9 +11,9 @@
             </thead>
             <tbody  *ngIf="listOfRequests && listOfRequests.length > 0">
                 <tr *ngFor="let request of listOfRequests">
-                    <td><span>{{request.dateTime}}</span></td>
-                    <td><span>{{request.prayerAsk}}</span></td>
-                    <td><span><a [routerLink]="['/prayerresponses',this.request.requestId]"><button type="button" class="btn btn-info" (click) ="onClickReply(this.request.requestId)">Reply</button></a></span></td>
+                    <td *ngIf="request.isRespondedTo == false"><span>{{request.dateTime}}</span></td>
+                    <td *ngIf="request.isRespondedTo == false"><span>{{request.prayerAsk}}</span></td>
+                    <td *ngIf="request.isRespondedTo == false"><span><a [routerLink]="['/prayerresponses',this.request.requestId]"><button type="button" class="btn btn-info" (click) ="onClickReply(this.request.requestId)">Reply</button></a></span></td>
 
                 </tr>
             </tbody>

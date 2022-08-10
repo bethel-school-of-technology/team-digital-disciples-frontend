@@ -4,6 +4,7 @@ import { PrayerRequestService } from '../services/prayer-request.service';
 import { PrayerRequest } from '../models/prayerRequest';
 import { Router } from '@angular/router';
 import { PrayerResponse } from '../models/prayerResponse';
+import { User } from '../models/User';
 @Component({
   selector: 'app-prayer-response',
   templateUrl: './prayer-response.component.html',
@@ -15,18 +16,22 @@ export class PrayerResponseComponent implements OnInit {
   selectedRequest: PrayerRequest = new PrayerRequest();
   prayerId: number;
   prayerResponse: PrayerResponse = new PrayerResponse();
+  originalPoster: User = new User();
     constructor(private actRoute: ActivatedRoute, private myPrayerService: PrayerRequestService, private router: Router) { }
   
     ngOnInit(): void {
       //extracted the id number from url
-      this.prayerId = parseInt(this.actRoute.snapshot.paramMap.get("requestId"));//finds numer and assigns it to variable from string to number
-      console.log(this.prayerId);  
-      
-      //fetch the prayer request data according to the id
-      this.myPrayerService.getOneRequest(this.prayerId).subscribe(response =>{
-        console.log(response);
+        this.prayerId = parseInt(this.actRoute.snapshot.paramMap.get("requestId")); 
+        this.myPrayerService.getOneRequest(this.prayerId).subscribe(response =>{
         this.selectedRequest = response;
+        console.log(this.selectedRequest.userId);
+        this.myPrayerService.getUser(this.selectedRequest.userId).subscribe(response =>{
+        console.log(response);
+        this.originalPoster = response;
+          });
       });
+      
+      
     }
    
     onClickReply(){
@@ -36,9 +41,9 @@ export class PrayerResponseComponent implements OnInit {
         this.prayerResponse.opId = this.selectedRequest.userId;
         this.prayerResponse.dateTime = new Date(); 
         this.myPrayerService.postResponse(this.prayerResponse).subscribe(result =>{
-          console.log(result)
+        console.log(result)
         this.router.navigate(["unrespondedprayerrequests"]);
-        })
+        });
       }
     }
   }

@@ -2,8 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { PrayerRequest } from '../models/prayerRequest';
 import { baseUrl } from 'src/environments/environment';
-import { Observable } from 'rxjs';
+import { ConnectableObservable, Observable } from 'rxjs';
 import { PrayerResponse } from '../models/prayerResponse';
+import { User } from '../models/User';
 
 
 @Injectable({
@@ -47,6 +48,11 @@ export class PrayerRequestService {
 
   postResponse(prayerResponse : PrayerResponse): Observable<any>{
     return this.http.post<any>(baseUrl + "PrayerResponses/new/" , prayerResponse);
+  }
+
+  getUser(userId : number){
+    console.log(userId);
+    return this.http.get<User>(baseUrl + "users/getone/" + userId)
   }
 
   // markAsAnswered(condition: boolean): Observable<PrayerRequest> {
