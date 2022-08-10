@@ -11,12 +11,10 @@ import { PrayerResponse } from '../models/prayerResponse';
 })
 export class PrayerResponseComponent implements OnInit {
 
-  currentRequest: PrayerRequest = new PrayerRequest();
-
   //place to store the reqeustId
-  selectedRequest: PrayerRequest;
+  selectedRequest: PrayerRequest = new PrayerRequest();
   prayerId: number;
-  
+  prayerResponse: PrayerResponse = new PrayerResponse();
     constructor(private actRoute: ActivatedRoute, private myPrayerService: PrayerRequestService, private router: Router) { }
   
     ngOnInit(): void {
@@ -31,11 +29,16 @@ export class PrayerResponseComponent implements OnInit {
       });
     }
    
-    onClickReply(prayerResponse: PrayerResponse){
-      this.myPrayerService.postResponse(prayerResponse).subscribe(result =>{
-        console.log(result);
-        
-  
-      })
+    onClickReply(){
+      if (this.prayerResponse.prayerTextResponse) {
+        this.prayerResponse.requestId = this.selectedRequest.requestId;
+        this.prayerResponse.ministerId =  JSON.parse(localStorage.getItem("currentUser")).userId;
+        this.prayerResponse.opId = this.selectedRequest.userId;
+        this.prayerResponse.dateTime = new Date(); 
+        this.myPrayerService.postResponse(this.prayerResponse).subscribe(result =>{
+          console.log(result)
+        this.router.navigate(["unrespondedprayerrequests"]);
+        })
+      }
     }
   }
