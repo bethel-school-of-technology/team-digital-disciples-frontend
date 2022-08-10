@@ -11,14 +11,13 @@
                     <th>Delete</th>
                 </tr>
             </thead>
-            <tbody  *ngIf="listOfRequests && listOfRequests.length > 0">
-                <tr *ngFor="let request of listOfRequests">
-                    <td><span>{{request.prayerAsk}}</span></td>
-                    <td><span>  <input type="button" name="answered" [(ngModel)]="request.isAnswered" [value]="false"> <!-- this needs a function to remove it from the list when checked-->
-                    </span></td>
+            <tbody  *ngIf="listOfRequests && listOfRequests.length > 0 ">
+              <tr *ngFor="let request of listOfRequests" >
+                <div *ngIf="request.isAnswered == false"> <td><span>{{request.prayerAsk}}</span></td>
+                    <td ><span>  <button type="button" name="answered" (click)="onClickAnswered(this.request)">Mark as Answered</button>  </span></td>
                     <td><span><a [routerLink]="['/edit',this.request.requestId]"><button type="button" class="btn btn-info" (click) ="onClickGetOne(this.request.requestId)">Edit</button></a></span></td>
                     <td><span> <button type="button" class="btn btn-danger" (click)="onClickDelete(this.request.requestId)">Delete</button></span></td>
-
+                </div> 
                 </tr>
             </tbody>
         </table>    
