@@ -12,6 +12,7 @@ import { User } from '../models/User';
 export class PrayerRequestsComponent implements OnInit {
   
   listOfRequests: PrayerRequest[];
+  
 
   constructor(private prayerService: PrayerRequestService) { }
   public currentUser: User;

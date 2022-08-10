@@ -13,10 +13,12 @@ import { PrayerRequestsComponent } from './prayer-requests/prayer-requests.compo
 import { NavbarComponent } from './navbar/navbar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditRequestComponent } from './edit-request/edit-request.component';
+import { UnrespondedPrayerRequestsComponent } from './unresponded-prayer-requests/unresponded-prayer-requests.component';
+import { PrayerResponseComponent } from './prayer-response/prayer-response.component';
 
 @NgModule({
   declarations: [
-    AppComponent, GetRequestComponent, LoginComponent, RegistrationComponent, DashboardComponent, InboxComponent, PrayerRequestsComponent, NavbarComponent, EditRequestComponent
+    AppComponent, GetRequestComponent, LoginComponent, RegistrationComponent, DashboardComponent, InboxComponent, PrayerRequestsComponent, NavbarComponent, EditRequestComponent, UnrespondedPrayerRequestsComponent, PrayerResponseComponent
   ],
   imports: [
     BrowserModule,
