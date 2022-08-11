@@ -1,1 +1,10 @@
-<p>inbox works!</p>
+<h1 class="inbox">{{this.currentUser.firstName}}'s Inbox</h1>
+<div *ngIf="this.noResponses == true" class="no-responses"><span>You Have No Responses In Your Inbox</span></div>
+<div *ngIf="prayerResponses && prayerResponses.length > 0" class="container">
+    <div *ngFor="let response of prayerResponses">
+    <div class="minister-name">The Prayer Warrior Prayed:</div>
+    <div class="message-blue">
+        <p class="message-content">{{this.response.prayerTextResponse}}</p>
+        <div class="message-timestamp-left">{{this.response.dateTime}}</div>
+    </div>
+</div>
