@@ -16,10 +16,10 @@
               <tr *ngFor="let request of listOfRequests" >
                 
                     <td *ngIf="request.isAnswered == false"><span>{{request.dateTime}}</span></td>
-                    <td ><span>{{request.prayerAsk}}</span></td>
-                    <td ><span>  <button type="button" name="answered" (click)="onClickAnswered(this.request)">Mark as Answered</button>  </span></td>
-                    <td><span><a [routerLink]="['/edit',this.request.requestId]"><button type="button" class="btn btn-info" (click) ="onClickGetOne(this.request.requestId)">Edit</button></a></span></td>
-                    <td><span> <button type="button" class="btn btn-danger" (click)="onClickDelete(this.request.requestId)">Delete</button></span></td>
+                    <td *ngIf="request.isAnswered == false"><span>{{request.prayerAsk}}</span></td>
+                    <td *ngIf="request.isAnswered == false"><span>  <button type="button" name="answered" (click)="onClickAnswered(this.request)">Mark as Answered</button>  </span></td>
+                    <td *ngIf="request.isAnswered == false"><span><a [routerLink]="['/edit',this.request.requestId]"><button type="button" class="btn btn-info" (click) ="onClickGetOne(this.request.requestId)">Edit</button></a></span></td>
+                    <td *ngIf="request.isAnswered == false"><span> <button type="button" class="btn btn-danger" (click)="onClickDelete(this.request.requestId)">Delete</button></span></td>
                 
                 </tr>
             </tbody>
