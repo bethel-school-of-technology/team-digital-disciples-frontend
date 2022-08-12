@@ -5,22 +5,26 @@
         <table class ="table table-bordered table-striped">
             <thead>
                 <tr>
-                    <th></th>
-                    <th>Answered</th>
+                    <th>Date</th>
+                    <th>Prayer Request</th>  
+                    <th>Answered</th> 
                     <th>Edit</th>
-                    <th>Delete</th>
+                    <th>Delete</th>              
                 </tr>
             </thead>
             <tbody  *ngIf="listOfRequests && listOfRequests.length > 0 ">
               <tr *ngFor="let request of listOfRequests" >
-                <div *ngIf="request.isAnswered == false"> <td><span>{{request.prayerAsk}}</span></td>
+                
+                    <td *ngIf="request.isAnswered == false"><span>{{request.dateTime}}</span></td>
+                    <td ><span>{{request.prayerAsk}}</span></td>
                     <td ><span>  <button type="button" name="answered" (click)="onClickAnswered(this.request)">Mark as Answered</button>  </span></td>
                     <td><span><a [routerLink]="['/edit',this.request.requestId]"><button type="button" class="btn btn-info" (click) ="onClickGetOne(this.request.requestId)">Edit</button></a></span></td>
                     <td><span> <button type="button" class="btn btn-danger" (click)="onClickDelete(this.request.requestId)">Delete</button></span></td>
-                </div> 
+                
                 </tr>
             </tbody>
-        </table>    
+        </table>  
+        <a [routerLink]="['']"><button type="button" class="btn btn-info" >Create a new Request</button></a>
         
          
             
