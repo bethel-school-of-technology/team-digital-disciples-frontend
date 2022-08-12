@@ -20,8 +20,13 @@ currentRequest: PrayerRequest = new PrayerRequest();
   ngOnInit(): void {
     this.currentUser = JSON.parse(localStorage.getItem("currentUser"));
     this.prayerService.getMyPR(this.currentUser.id).subscribe(result =>{
-     
+      
       this.listOfRequests = result;
+      result = result.sort(function (a, b) {
+        var dateA = new Date(a.dateTime).getTime();
+        var dateB = new Date(b.dateTime).getTime();
+        return dateA < dateB ? -1 : 1; // ? -1 : 1 for ascending/increasing order
+      });
     });
   }
 
