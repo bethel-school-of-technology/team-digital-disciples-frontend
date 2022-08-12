@@ -5,6 +5,6 @@
     <div class="minister-name">The Prayer Warrior Prayed:</div>
     <div class="message-blue">
         <p class="message-content">{{this.response.prayerTextResponse}}</p>
-        <div class="message-timestamp-left">{{this.response.dateTime}}</div>
+        <div class="message-timestamp-left">{{this.response.dateTime | date : 'short'}}</div>
     </div>
 </div>

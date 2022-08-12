@@ -25,7 +25,6 @@ export class InboxComponent implements OnInit {
       this.responseService.getResponses(this.currentUser.id).subscribe(result => {
         if (result.length < 1){
           this.noResponses = true;
-          console.log(this.noResponses);
         }    
         this.prayerResponses = result;
         
