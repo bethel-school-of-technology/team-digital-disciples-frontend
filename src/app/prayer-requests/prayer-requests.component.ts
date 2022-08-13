@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PrayerRequest } from '../models/prayerRequest';
 import { PrayerRequestService } from '../services/prayer-request.service';
 import { User } from '../models/User';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-prayer-requests',
@@ -14,20 +15,35 @@ export class PrayerRequestsComponent implements OnInit {
   listOfRequests: PrayerRequest[];
 currentRequest: PrayerRequest = new PrayerRequest();
 
+
+
+
   constructor(private prayerService: PrayerRequestService) { }
   public currentUser: User;
  
-  ngOnInit(): void {
+  ngOnInit(): void 
+  {
     this.currentUser = JSON.parse(localStorage.getItem("currentUser"));
-    this.prayerService.getMyPR(this.currentUser.id).subscribe(result =>{
-      
-      this.listOfRequests = result;
-      result = result.sort(function (a, b) {
-        var dateA = new Date(a.dateTime).getTime();
-        var dateB = new Date(b.dateTime).getTime();
-        return dateA < dateB ? -1 : 1; // ? -1 : 1 for ascending/increasing order
-      });
+    this.prayerService.getMyPR(this.currentUser.id).subscribe(result =>
+      {
+    
+        this.listOfRequests = result;
+    
+        //sort entries by date
+      // result = result.sort(function (a, b) 
+      // {
+      //   var dateA = new Date(a.dateTime).getTime();
+      //   var dateB = new Date(b.dateTime).getTime();
+      //   return dateA < dateB ? 1 : -1; // ? -1 : 1 for ascending/increasing order
+      // });
+     
     });
+   
+  }
+
+  //format date using moment()
+  dateFormat(timestamp: Date) {
+    return moment(timestamp).format("MMM do YY, h:mm a");
   }
 
   onClickAnswered(prayerRequest: PrayerRequest) {
