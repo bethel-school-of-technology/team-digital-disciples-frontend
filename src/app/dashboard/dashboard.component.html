@@ -1,16 +1,39 @@
 <html>
+  <head><link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  /></head>
     <body>
-    <div class="subheader">
-        <div class="container flex">
-          <div class="subheadings">
-            <h2>Verse of the Day:</h2>
-            <h3 id="viewing"><span id="verse"></span></h3>
-          </div>
+    <main>
+      <div class="glass">
+        <form [formGroup]="formGroup" (ngSubmit)="onClickSubmitRequest()">
+              <div class="welcome"><h1>Welcome {{this.currentUser.firstName}}</h1></div>
+              <div class="request-container">
+              <h2>Post Prayer Request:</h2>
+              <br>
+              <textarea ngModel rows = "5" cols = "60" name = "description" formControlName="prayerAsk">
+              New Prayer Request
+              </textarea>
+              <div class="submit-btn">
+                <button type="submit" class="btn btn-success">Submit</button>
+              </div>
+            </div>
+            
+          </form>
+          
         </div>
-      </div>
-      <main class="container">
-        <div id="verse-content" class="verse-container"></div>
       </main>
+      <div class="circle1"></div>
+      <div class="circle2"></div>
+      </body>
+      </html>
+
+    
+        <!--
+          
+            <h2>Verse of the Day:</h2>
+            <h3 id="viewing"><span id="verse"></span></h3> 
+          <div id="verse-content" class="verse-container"></div>
       <script src="http://cdn.scripture.api.bible/fums/fumsv2.min.js"></script>
       <script>
             const API_KEY = ``; // Fill in with your own key.
@@ -41,18 +64,4 @@
         ];
         const verseIndex = Math.floor(Math.random() * VERSES.length);
         const verseID = VERSES[verseIndex];
-      </script>
-<div class="container">
-  <form [formGroup]="formGroup" (ngSubmit)="onClickSubmitRequest()">
-        <h1>Welcome {{this.currentUser.firstName}}</h1>
-        <h2>Post Prayer Request:</h2>
-        <br>
-        <textarea ngModel rows = "5" cols = "60" name = "description" formControlName="prayerAsk">
-        New Prayer Request
-        </textarea>
-        <br>
-        <button type="submit" class="btn btn-success">Submit</button>
-    </form>
-</div>
-</body>
-</html>
+      </script> -->
