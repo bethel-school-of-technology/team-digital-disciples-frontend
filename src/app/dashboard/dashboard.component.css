@@ -1,20 +1,20 @@
 main {
     font-family: "Poppins", sans-serif;
     min-height: 100vh;
-    background: linear-gradient(to top right, #0d6efd, #6cdbeb);
+    background: linear-gradient(to top right, #3612FD, #765EFA);
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
   .glass {
-    background: white;
+    background: #FFDA49;
     min-height: 80vh;
     width: 60%;
     background: linear-gradient(
       to right bottom,
-      rgba(255, 255, 255, 0.7),
-      rgba(255, 255, 255, 0.3)
+      rgba(255, 203, 0, 0.7),
+      rgba(255, 218, 73, 0.3)
     );
     border-radius: 2rem;
     z-index: 2;
@@ -58,8 +58,8 @@ main {
     flex-direction: column;
     background: linear-gradient(
     to right bottom,
-    rgba(255, 255, 255, 0.7),
-    rgba(255, 255, 255, 0.3)
+    rgba(255, 161, 0, 0.7),
+    rgba(255, 188, 73, 0.3)
   );
   border-radius: 2rem;
 }

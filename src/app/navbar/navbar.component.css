@@ -23,3 +23,7 @@
     color: rgb(255, 255, 255);
     font-weight: bold;
 }
+#bg-primary {
+        font-family: "Poppins", sans-serif;
+        background : linear-gradient(to bottom right, #3612FD, #765EFA);
+      }
