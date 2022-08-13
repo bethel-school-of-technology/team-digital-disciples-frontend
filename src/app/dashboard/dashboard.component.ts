@@ -24,6 +24,7 @@ export class DashboardComponent implements OnInit {
     this.currentUser.lastName = JSON.parse(localStorage.getItem('currentUser')).lastName;
     this.currentUser.username = JSON.parse(localStorage.getItem('currentUser')).username;
     this.currentUser.token = JSON.parse(localStorage.getItem('currentUser')).token;
+    console.log("Current User Id is "+ this.currentUser.id);
   }
 
   initForm(){

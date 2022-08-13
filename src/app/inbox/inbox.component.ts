@@ -3,6 +3,7 @@ import { User } from '../models/User';
 import { LoginService } from '../services/login-service.service';
 import { PrayerResponseService } from '../services/prayer-response.service';
 import { PrayerResponse } from '../models/prayerResponse';
+import { CombinedResponse } from '../models/CombinedResponse';
 
 @Component({
   selector: 'app-inbox',
@@ -16,7 +17,7 @@ export class InboxComponent implements OnInit {
     this.responseService = responseService;
   }
   public currentUser = new User();
-  prayerResponses : PrayerResponse[];
+  prayerResponses : CombinedResponse[];
   noResponses = false;
 
 

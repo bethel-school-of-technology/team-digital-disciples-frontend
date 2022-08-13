@@ -2,9 +2,14 @@
 <div *ngIf="this.noResponses == true" class="no-responses"><span>You Have No Responses In Your Inbox</span></div>
 <div *ngIf="prayerResponses && prayerResponses.length > 0" class="container">
     <div *ngFor="let response of prayerResponses">
-    <div class="minister-name">The Prayer Warrior Prayed:</div>
+        <div class="minister-name">You Requested Prayer For:</div>
+    <div class="message-blue">
+        <p class="message-content">{{this.response.requestText}}</p>
+        <div class="message-timestamp-left">{{this.response.requestDateTime | date : 'short'}}</div>
+    </div>
+    <div class="minister-name">{{this.response.ministerName}} Prayed:</div>
     <div class="message-blue">
         <p class="message-content">{{this.response.prayerTextResponse}}</p>
-        <div class="message-timestamp-left">{{this.response.dateTime | date : 'short'}}</div>
+        <div class="message-timestamp-left">{{this.response.responseDateTime | date : 'short'}}</div>
     </div>
 </div>
