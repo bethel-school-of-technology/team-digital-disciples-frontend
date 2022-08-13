@@ -17,6 +17,7 @@ export class PrayerResponseComponent implements OnInit {
   prayerId: number;
   prayerResponse: PrayerResponse = new PrayerResponse();
   originalPoster: User = new User();
+  minister: User = new User();
     constructor(private actRoute: ActivatedRoute, private myPrayerService: PrayerRequestService, private router: Router) { }
   
     ngOnInit(): void {
@@ -27,6 +28,7 @@ export class PrayerResponseComponent implements OnInit {
         console.log(this.selectedRequest.userId);
         this.myPrayerService.getUser(this.selectedRequest.userId).subscribe(response =>{
         console.log(response);
+        this.minister = JSON.parse(localStorage.getItem("currentUser"));
         this.originalPoster = response;
           });
       });
@@ -37,7 +39,7 @@ export class PrayerResponseComponent implements OnInit {
     onClickReply(){
       if (this.prayerResponse.prayerTextResponse) {
         this.prayerResponse.requestId = this.selectedRequest.requestId;
-        this.prayerResponse.ministerId =  JSON.parse(localStorage.getItem("currentUser")).userId;
+        this.prayerResponse.ministerId =  this.minister.id;
         this.prayerResponse.opId = this.selectedRequest.userId;
         this.prayerResponse.dateTime = new Date(); 
         this.myPrayerService.postResponse(this.prayerResponse).subscribe(result =>{
