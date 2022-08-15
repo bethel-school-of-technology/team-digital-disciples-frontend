@@ -4,12 +4,31 @@
 
 
 
-.registration-div {
-    margin: 100px auto;
-    width: 400px;
-    background-color: rgb(1, 118, 252);
-    padding: 60px;
-    border-radius: 35px;
+.main{
+    font-family: "Poppins", sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(to top right, #3612FD, #765EFA);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.glass {
+    background: #FFDA49;
+    padding:1rem;
+    min-height: 60vh;
+    width: 40rem;
+    background: linear-gradient(
+    to right bottom,
+        rgba(255, 203, 0, 0.7),
+        rgba(255, 218, 73, 0.3)
+    );
+    border-radius: 2rem;
+    z-index: 2;
+    backdrop-filter: blur(2rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .logo {
