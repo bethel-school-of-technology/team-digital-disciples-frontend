@@ -1,9 +1,12 @@
+<head>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://momentjs.com/downloads/moment.min.js"></script>
-<div class="container">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet"/></head>
+<main>
+      <div class="glass">
+        <div class="request-container">
     <h1>My Prayer Requests</h1>
-    <div class="prayer-requests" ></div>
-        <table class ="table table-bordered table-striped">
+        <table class ="table table-bordered table-striped" id="table">
             <thead>
                 <tr>
                     <th>Date</th>
@@ -26,9 +29,10 @@
             </tbody>
         </table>  
         <a [routerLink]="['']"><button type="button" class="btn btn-info" >Create a new Request</button></a>
-        <br>
+    </div>
+    <div class="request-container">
         <h2>My Answered Requests</h2>
-        <table class ="table table-bordered table-striped">
+        <table class ="table table-bordered table-striped" id="table">
             <thead>
                 <tr>
                     <th>Date</th>
@@ -44,7 +48,7 @@
                 </tr>
             </tbody>
         </table>  
-            
+    </div>
             <!-- edit icon: <i style="font-size:24px" class="fa">&#xf044;</i>  -->
            
 
@@ -53,5 +57,7 @@
                 <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
               </svg> -->
 </div>
-      
-
+</main>
+<div class="circle1"></div>
+<div class="circle2"></div> 
+  

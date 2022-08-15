@@ -1,13 +1,20 @@
-
-<div class="container">
-<h3>Update your Prayer Request </h3>
+<head><link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+    rel="stylesheet"/></head>
+<main>
+<div class="glass">
+<div class="request-container">
+<h1>Update your Prayer Request </h1>
 
 <form (ngSubmit)="editRequest()">
-    <label>Type your changes then click 'Update"</label>
-    <br>
+    <label><h4>Type your changes then click 'Update"</h4></label>
+    <textarea rows="6" cols="100" name="prayerAsk" [(ngModel)] = "currentRequest.prayerAsk"></textarea>
     <button type="submit">Update</button>
 </form>
 <br>
-<textarea rows="6" cols="100" name="prayerAsk" [(ngModel)] = "currentRequest.prayerAsk"></textarea>
 
 </div>
+</div>
+</main>
+<div class="circle1"></div>
+<div class="circle2"></div>
