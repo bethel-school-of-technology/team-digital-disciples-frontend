@@ -1,6 +1,13 @@
-<div class="container">
+<head><link
+  href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+  rel="stylesheet"
+/></head>
+<main>
+<div class="glass">
+<div class="request-container">
         <form (ngSubmit)="onClickReply()">
-          <h1>{{this.originalPoster.firstName}} {{this.originalPoster.lastName}} is asking for prayer for: {{this.selectedRequest.prayerAsk}}</h1>
+          <h1>{{this.originalPoster.firstName}} {{this.originalPoster.lastName}} is asking for prayer for: </h1>
+          <h4 class="prayer">{{this.selectedRequest.prayerAsk}}</h4>
           <h2>Respond to Prayer:</h2>
           <br>
           <textarea ngModel rows = "5" cols = "60" name = "description" [(ngModel)] = "prayerResponse.prayerTextResponse" >
@@ -10,3 +17,7 @@
         </form>
 
   </div>
+</div>
+</main>
+<div class="circle1"></div>
+<div class="circle2"></div>

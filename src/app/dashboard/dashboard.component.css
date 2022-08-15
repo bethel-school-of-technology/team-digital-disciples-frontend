@@ -10,7 +10,7 @@ main {
   .glass {
     background: #FFDA49;
     padding:1rem;
-    min-height: 80vh;
+    min-height: 60vh;
     width: 60%;
     background: linear-gradient(
       to right bottom,

@@ -1,7 +1,14 @@
+<html>
+    <head><link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+        rel="stylesheet"/></head>
+<main>
+<div class="glass">
 <h1 class="inbox">{{this.currentUser.firstName}}'s Inbox</h1>
 <div *ngIf="this.noResponses == true" class="no-responses"><span>You Have No Responses In Your Inbox</span></div>
 <div *ngIf="prayerResponses && prayerResponses.length > 0" class="container">
     <div *ngFor="let response of prayerResponses">
+        <div class="request-container">
         <div class="minister-name">You Requested Prayer For:</div>
     <div class="message-blue">
         <p class="message-content">{{this.response.requestText}}</p>
@@ -12,4 +19,11 @@
         <p class="message-content">{{this.response.prayerTextResponse}}</p>
         <div class="message-timestamp-left">{{this.response.responseDateTime | date : 'short'}}</div>
     </div>
+    </div>
 </div>
+</div>
+</div>
+</main>
+<div class="circle1"></div>
+<div class="circle2"></div>
+</html>
