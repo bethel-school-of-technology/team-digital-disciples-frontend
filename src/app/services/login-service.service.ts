@@ -23,5 +23,10 @@ export class LoginService {
   getUser():Observable<User>{
     return this.currentUser;
   }
+  getToken(){
+   console.log(this.currentUser.token);
+   return this.currentUser.token;
+   
+  }
   
 }
