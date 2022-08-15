@@ -24,8 +24,13 @@ export class LoginService {
     return this.currentUser;
   }
   getToken(){
+    if (this.currentUser){
+
+    
    console.log(this.currentUser.token);
    return this.currentUser.token;
+    }
+    return;
    
   }
   
