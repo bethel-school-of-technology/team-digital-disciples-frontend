@@ -60,3 +60,27 @@ main {
   );
   border-radius: 2rem;
 }
+
+.btn-danger {
+  background-color: rgba(255, 38, 0, 0.7);
+  opacity: 0.8;
+  filter: alpha(opacity=20);
+}
+
+.btn-info {
+  color: white;
+  background-color: #765EFA;
+  opacity: 0.8;
+  filter: alpha(opacity=20);
+  /* background-color: linear-gradient(
+    to right bottom,
+  rgba(76,45,253, 0.7)
+  rgba(154, 138, 248, 0.3) 
+    ); */
+  }
+
+.btn-light {
+  background-color: #c2b8fc;
+  opacity: 0.8;
+  filter: alpha(opacity=20);
+}

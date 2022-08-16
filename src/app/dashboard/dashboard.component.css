@@ -68,7 +68,13 @@ main {
     display: flex;
     justify-items: flex-end;
     align-items: flex-end;
+   
 }
+
+.btn-success {
+  background-color: #3612FD;
+}
+
 textarea {
     padding: .7rem;
     border-style: none;

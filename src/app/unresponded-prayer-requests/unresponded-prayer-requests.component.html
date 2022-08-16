@@ -16,7 +16,7 @@
             </thead>
             <tbody  *ngIf="listOfRequests && listOfRequests.length > 0">
                 <tr *ngFor="let request of listOfRequests">
-                    <td *ngIf="request.isRespondedTo == false"><span>{{request.dateTime}}</span></td>
+                    <td *ngIf="request.isRespondedTo == false"><span>{{dateFormat(request.dateTime)}}</span></td>
                     <td *ngIf="request.isRespondedTo == false"><span>{{request.prayerAsk}}</span></td>
                     <td *ngIf="request.isRespondedTo == false"><span><a [routerLink]="['/prayerresponses',this.request.requestId]"><button type="button" class="btn btn-info" (click) ="onClickReply(this.request.requestId)">Reply</button></a></span></td>
 
