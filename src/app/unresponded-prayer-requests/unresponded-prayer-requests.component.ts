@@ -29,6 +29,6 @@ export class UnrespondedPrayerRequestsComponent implements OnInit {
 
    //format date using moment()
    dateFormat(timestamp: Date) {
-    return moment(timestamp).format("MMM do YY, h:mm a");
+    return moment(timestamp).startOf('day').fromNow();
   }
 }
