@@ -74,7 +74,8 @@
     margin-top: 30px;
 }
 
-.register-btn {
-    background-color: #001aff;
-    
-}
+.btn-success {
+    background-color: rgba(253, 206, 15, 0.7);
+    opacity: 0.8;
+    filter: alpha(opacity=20)
+  }
