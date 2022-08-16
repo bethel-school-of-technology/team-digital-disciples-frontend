@@ -63,3 +63,13 @@ main {
     align-items: center;
     justify-content: center;
   }
+  .btn-success {
+    background-color: #3612FD;
+    opacity: 0.8;
+    filter: alpha(opacity=20)
+  }
+  .btn-primary{
+    background-color: rgba(250, 212, 58, 0.7); 
+    opacity: 0.8;
+    filter: alpha(opacity=20) 
+    }

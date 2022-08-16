@@ -80,3 +80,9 @@ form {
     width: 80%;
     margin-top: 2rem;
 }
+.btn-light {
+  color:rgba(255, 255, 255, 0.8);
+  background-color: #5d5afd;
+  opacity: 0.8;
+  filter: alpha(opacity=20);
+}
