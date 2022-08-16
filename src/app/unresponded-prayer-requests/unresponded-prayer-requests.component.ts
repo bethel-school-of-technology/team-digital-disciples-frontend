@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PrayerRequestService } from '../services/prayer-request.service';
 import { PrayerRequest } from '../models/prayerRequest';
 import { Router } from '@angular/router';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-unresponded-prayer-requests',
@@ -24,5 +25,10 @@ export class UnrespondedPrayerRequestsComponent implements OnInit {
     this.prayerService.getOneRequest(requestId).subscribe(result =>{
       console.log(result);
   })
+  }
+
+   //format date using moment()
+   dateFormat(timestamp: Date) {
+    return moment(timestamp).format("MMM do YY, h:mm a");
   }
 }

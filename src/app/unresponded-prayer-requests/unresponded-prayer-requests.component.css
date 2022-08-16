@@ -60,3 +60,9 @@ main {
   );
   border-radius: 2rem;
 }
+
+.btn-info {
+  background-color: #9481ff ;
+  opacity: 0.8;
+  filter: alpha(opacity=20);
+}
