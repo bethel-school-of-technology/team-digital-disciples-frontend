@@ -19,7 +19,7 @@
     backdrop-filter: blur(2rem);
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content:center;
 }
 
 .logo {
@@ -60,7 +60,7 @@ main {
     min-height: 100vh;
     background: linear-gradient(to top right, #3612FD, #765EFA);
     display: flex;
-    align-items: center;
+    align-items: top;
     justify-content: center;
   }
   .btn-success {
@@ -73,3 +73,9 @@ main {
     opacity: 0.8;
     filter: alpha(opacity=20) 
     }
+
+@media only screen and (max-width:500px) {
+.login-div {
+    width: 100%;
+}
+}

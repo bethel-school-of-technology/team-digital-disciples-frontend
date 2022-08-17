@@ -6,10 +6,10 @@
 
 .main{
     font-family: "Poppins", sans-serif;
-    min-height: 100vh;
+    min-height: 90vh;
     background: linear-gradient(to top right, #3612FD, #765EFA);
     display: flex;
-    align-items: center;
+    align-items: top;
     justify-content: center;
 }
 .glass {
@@ -59,7 +59,7 @@
 .form-group {
     text-align: center;
     color:#ffffff;
-    margin-bottom: 20px;
+    margin-bottom: 2px;
 }
 
 .btn {
@@ -74,8 +74,13 @@
     margin-top: 30px;
 }
 
-.btn-success {
-    background-color: rgba(253, 206, 15, 0.7);
-    opacity: 0.8;
-    filter: alpha(opacity=20)
-  }
+.register-btn {
+    background-color: #001aff;
+    
+}
+@media only screen and (max-width:500px) {
+    .glass {
+        height: 80vh;
+        width: 90%;
+    }
+}
