@@ -1,6 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400);
 
 .inbox {
+    margin-top: 1rem;
     text-align: center;
 }
 .no-responses {
@@ -9,6 +10,7 @@
 }
 
 .title {
+    margin-top: .5rem;
     margin-bottom: 30px;
 }
 .minister-name {
@@ -126,7 +128,7 @@ main {
 .request-container {
     display: flex;
     padding: 2rem;
-    margin-top: 5rem;
+    margin-top: 2rem;
     flex-direction: column;
     background: linear-gradient(
     to right bottom,
@@ -149,6 +151,14 @@ textarea {
 form {
     width: 80%;
 }
-
-
+@media only screen and (max-width:500px) {
+    
+    .glass {
+        padding: 0;
+    }
+    .request-container {
+        width: 100%;
+        padding: 0;
+    }
+}
 
