@@ -3,13 +3,13 @@ main {
     min-height: 100vh;
     background: linear-gradient(to top right, #3612FD, #765EFA);
     display: flex;
-    align-items: center;
     justify-content: center;
+     
   }
 
   .glass {
     background: #FFDA49;
-    padding:1rem;
+    padding: 1rem;
     min-height: 80vh;
     width: 60%;
     background: linear-gradient(
@@ -22,7 +22,7 @@ main {
     backdrop-filter: blur(2rem);
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    gap: 30px;
   }
 
   .circle1,
@@ -48,10 +48,10 @@ main {
   left: 10%;
 }
 
-.request-container {
+.container-fluid {
     display: flex;
-    padding: 2rem;
-    margin-top: 1rem;
+    padding: 1rem;
+    margin-top: 2rem;
     flex-direction: column;
     background: linear-gradient(
     to right bottom,
