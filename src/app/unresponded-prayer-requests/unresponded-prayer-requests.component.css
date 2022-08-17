@@ -3,15 +3,18 @@ main {
     min-height: 100vh;
     background: linear-gradient(to top right, #3612FD, #765EFA);
     display: flex;
-    align-items: center;
+    align-items: top;
     justify-content: center;
   }
 
   .glass {
     background: #FFDA49;
-    padding:1rem;
+    padding-top: 2rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    padding-bottom: 2rem;
     min-height: 80vh;
-    width: 60%;
+    width: fit-content;
     background: linear-gradient(
       to right bottom,
       rgba(255, 203, 0, 0.7),
@@ -22,7 +25,8 @@ main {
     backdrop-filter: blur(2rem);
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: top;
+    align-items: top;
   }
 
   .circle1,
@@ -52,6 +56,7 @@ main {
     display: flex;
     padding: 2rem;
     margin-top: 1rem;
+    width: fit-content;
     flex-direction: column;
     background: linear-gradient(
     to right bottom,
@@ -65,4 +70,9 @@ main {
   background-color: #9481ff ;
   opacity: 0.8;
   filter: alpha(opacity=20);
+}
+@media only screen and (max-width:500px) {
+    .glass {
+        padding: 0;
+    }
 }
