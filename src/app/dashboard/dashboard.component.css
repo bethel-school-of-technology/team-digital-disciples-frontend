@@ -3,7 +3,7 @@ main {
     min-height: 100vh;
     background: linear-gradient(to top right, #3612FD, #765EFA);
     display: flex;
-    align-items: center;
+    align-items: top;
     justify-content: center;
   }
   
@@ -11,7 +11,7 @@ main {
   .glass {
     background: #FFDA49;
     padding:1rem;
-    min-height: 60vh;
+    max-height: fit-content;
     width: 60%;
     background: linear-gradient(
       to right bottom,
@@ -58,6 +58,9 @@ main {
     padding: 2rem;
     margin-top: 5rem;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     background: linear-gradient(
     to right bottom,
     rgba(255, 161, 0, 0.7),
@@ -81,7 +84,19 @@ textarea {
     border-style: none;
     border-radius: 2rem;
     margin-bottom: .5rem;
+    width: 90%;
 }
 form {
     width: 80%;
+}
+
+@media only screen and (max-width:500px) {
+  .glass {
+      padding: 0;
+      height: fit-content;
+  }
+  .request-container{
+    padding: 0;
+    margin-top: .05rem;
+  }
 }
