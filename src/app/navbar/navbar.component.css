@@ -12,6 +12,7 @@
 .nav-item {
     margin-left: 25px;
     font-size: 22px;
+    z-index: 950;
 }
 
 .user-container {
