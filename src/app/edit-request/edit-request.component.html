@@ -4,19 +4,18 @@
     rel="stylesheet"/></head>
     <body>
 <main>
-<div class="glass">
-<div class="container-fluid">
-<h1>Update your Prayer Request </h1>
+    <div class="glass">
+        <div class="container-fluid">
+        <h1>Update your Prayer Request </h1>
 
-<form  (ngSubmit)="editRequest()">
-    <label><h4>Type your changes then click 'Update"</h4></label>
-    <textarea rows="6" cols="70" name="prayerAsk" [(ngModel)] = "currentRequest.prayerAsk"></textarea>
-    <button class="btn btn-light" type="submit">Update</button>
-</form>
-<br>
-
-</div>
-</div>
+            <form  (ngSubmit)="editRequest()">
+                <label><h4>Type your changes then click 'Update"</h4></label>
+                <textarea class="form-control" rows="6" cols="70" name="prayerAsk" [(ngModel)] = "currentRequest.prayerAsk"></textarea>
+                <button class="btn btn-light" type="submit">Update</button>
+            </form>
+            <br>
+        </div>
+    </div>
 </main>
 <div class="circle1"></div>
 <div class="circle2"></div>
