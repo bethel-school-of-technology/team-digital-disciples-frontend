@@ -20,7 +20,7 @@
             <tbody  *ngIf="listOfRequests && listOfRequests.length > 0 ">
               <tr *ngFor="let request of listOfRequests" >
                 
-                    <td *ngIf="request.isAnswered == false"><span>{{dateFormat(request.dateTime)}}</span></td>
+                    <td *ngIf="request.isAnswered == false"><span>{{request.dateTime | date: 'short'}}</span></td>
                     <td *ngIf="request.isAnswered == false"><span>{{request.prayerAsk}}</span></td>
                     <td *ngIf="request.isAnswered == false"><span>  <button type="button" class="btn btn-light" name="answered" (click)="onClickAnswered(this.request)">Mark as Answered</button>  </span></td>
                     <td *ngIf="request.isAnswered == false"><span><a [routerLink]="['/edit',this.request.requestId]"><button type="button" class="btn btn-info" (click) ="onClickGetOne(this.request.requestId)">Edit</button></a></span></td>
