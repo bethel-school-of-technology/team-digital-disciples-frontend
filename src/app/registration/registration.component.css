@@ -74,8 +74,10 @@
     margin-top: 30px;
 }
 
-.register-btn {
-    background-color: #001aff;
+.btn-success  {
+    background-color: #3612FD;
+    opacity: 0.8;
+    filter: alpha(opacity=20)
     
 }
 @media only screen and (max-width:500px) {
