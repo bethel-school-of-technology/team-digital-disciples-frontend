@@ -3,8 +3,11 @@
     height: 80vh;
     width: 80%;
 }
-  table,thead,tbody,th,td,tr{
+  table,thead,tbody,td,tr{
     display:block;
+  }
+  th{
+    display: none;
   }
   
 }
