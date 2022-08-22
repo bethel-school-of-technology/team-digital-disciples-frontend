@@ -160,5 +160,8 @@ form {
         width: 100%;
         padding: 0;
     }
+    .message-blue{
+        height: fit-content;
+    }
 }
 
