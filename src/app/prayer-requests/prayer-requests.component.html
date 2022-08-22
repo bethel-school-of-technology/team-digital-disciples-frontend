@@ -4,10 +4,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet"/></head>
 <main>
       <div class="glass">
-        <div class="container-fluid">
+        <div class="request-container">
     <h1>My Prayer Requests</h1>
-    <div class="table-responsive" overflow="auto">
-        <table class ="table table-striped" id="table">
+        <table class ="table table-bordered table-striped">
             <thead>
                 <tr>
                     <th>Date</th>
@@ -20,39 +19,36 @@
             <tbody  *ngIf="listOfRequests && listOfRequests.length > 0 ">
               <tr *ngFor="let request of listOfRequests" >
                 
-                    <td *ngIf="request.isAnswered == false"><span>{{request.dateTime | date: 'short'}}</span></td>
+                    <td *ngIf="request.isAnswered == false"><span>{{dateFormat(request.dateTime)}}</span></td>
                     <td *ngIf="request.isAnswered == false"><span>{{request.prayerAsk}}</span></td>
-                    <td *ngIf="request.isAnswered == false"><span>  <button type="button" class="btn btn-light" name="answered" (click)="onClickAnswered(this.request)">Mark as Answered</button>  </span></td>
+                    <td *ngIf="request.isAnswered == false"><span>  <button type="button" name="answered" (click)="onClickAnswered(this.request)">Mark as Answered</button>  </span></td>
                     <td *ngIf="request.isAnswered == false"><span><a [routerLink]="['/edit',this.request.requestId]"><button type="button" class="btn btn-info" (click) ="onClickGetOne(this.request.requestId)">Edit</button></a></span></td>
                     <td *ngIf="request.isAnswered == false"><span> <button type="button" class="btn btn-danger" (click)="onClickDelete(this.request.requestId)">Delete</button></span></td>
                 
                 </tr>
             </tbody>
         </table>  
-    </div>
         <a [routerLink]="['']"><button type="button" class="btn btn-info" >Create a new Request</button></a>
     </div>
-        <div class="container-fluid">
-            <h2>My Answered Requests</h2>
-            <div class="table-responsive">
-            <table class ="table table-bordered table-striped" id="table">
-                <thead>
-                    <tr>
-                        <th>Date</th>
-                        <th>Aswered Requests</th>  
-                    </tr>
-                </thead>
-                <tbody  *ngIf="listOfRequests && listOfRequests.length > 0 ">
-                <tr *ngFor="let request of listOfRequests" >
-                    
-                        <td *ngIf="request.isAnswered == true"><span>{{dateFormat(request.dateTime)}}</span></td>
-                        <td *ngIf="request.isAnswered == true"><span>{{request.prayerAsk}}</span></td>
+    <div class="request-container">
+        <h2>My Answered Requests</h2>
+        <table class ="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Aswered Requests</th>  
+                </tr>
+            </thead>
+            <tbody  *ngIf="listOfRequests && listOfRequests.length > 0 ">
+              <tr *ngFor="let request of listOfRequests" >
+                
+                    <td *ngIf="request.isAnswered == true"><span>{{dateFormat(request.dateTime)}}</span></td>
+                    <td *ngIf="request.isAnswered == true"><span>{{request.prayerAsk}}</span></td>
 
-                    </tr>
-                </tbody>
-            </table>  
-        </div>
-        </div>
+                </tr>
+            </tbody>
+        </table>  
+    </div>
             <!-- edit icon: <i style="font-size:24px" class="fa">&#xf044;</i>  -->
            
 
@@ -62,6 +58,6 @@
               </svg> -->
 </div>
 </main>
-<div class="circle1"></div>
-<div class="circle2"></div> 
+  <div class="circle1"></div>
+      <div class="circle2"></div> 
   
